@@ -1,0 +1,23 @@
+<h1>Register</h1>
+<form [formGroup]="formRegister" (submit)="register()">
+  <div class="field-group" formGroupName="username">
+    <div class="field-wrapper">
+      <input class="field" formControlName="account" placeholder="Account" (focus)="showValidation($event)" (blur)="hideValidation($event)" />
+      <span>@</span>
+      <select class="field" formControlName="domain" (focus)="showValidation($event)" (blur)="hideValidation($event)">
+        <option value="" disabled>Domain</option>
+        <option *ngFor="let domain of domains; let i = index;" [ngValue]="i">{{domain}}</option>
+      </select>
+    </div>
+    <ul class="validation">
+      <li [class.valid]="formRegister.controls['username'].get('account').valid">Enter your full name where you separate your first and last name with a dot.</li>
+      <li [class.valid]="formRegister.controls['username'].get('domain').valid">Please select one of the domains what suits your email address.</li>
+    </ul>
+  </div>
+  <input class="field" formControlName="studentNumber" placeholder="Student number" *ngIf="formRegister.controls['username'].get('domain').value == 1" />
+  <input class="field" formControlName="firstName" placeholder="First name" />
+  <input class="field" formControlName="lastName" placeholder="Last name" />
+  <input class="field" formControlName="password" placeholder="Password" type="password" />
+  <button [disabled]="!formRegister.valid">Submit</button>
+  <a class="button" routerLink="new-password">Lost account?</a>
+</form>

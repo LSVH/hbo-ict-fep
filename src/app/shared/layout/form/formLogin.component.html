@@ -1,0 +1,7 @@
+<h1>Login</h1>
+<form [formGroup]="formLogin" (submit)="login()">
+  <input class="field" placeholder="Username" />
+  <input class="field" placeholder="Password" type="password" />
+  <button [disabled]="!formLogin.valid">Submit</button>
+  <a class="button" routerLink="new-password">Forgot password?</a>
+</form>
