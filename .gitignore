@@ -1,0 +1,9 @@
+.idea
+*.iws
+out/
+.idea_modules/
+*.log
+.npm
+node_modules
+e2e_test.*
+.build-analytics
