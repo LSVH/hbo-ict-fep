@@ -47,3 +47,14 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+### END OF IGNORE
+### JetBrains IDE
+
+
+# Default angular ignore
+*.log
+.npm
+node_modules
+e2e_test.*
+.build-analytics

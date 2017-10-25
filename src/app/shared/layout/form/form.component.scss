@@ -1,0 +1,119 @@
+@import "compass/css3";
+@import "variables";
+
+:host {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  background-color: $secondaryTint;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 4px;
+  @include box-shadow(1px 1px 4px $primaryTint);
+  h1 {
+    line-height: 120%;
+    margin: -20px -20px 36px -20px;
+    padding: 20px;
+    background-color: #d8d8d8;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+  }
+  .field {
+    outline: none;
+    width: 100%;
+    padding: 8px 16px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 120%;
+    display: block;
+    border: 1px solid $primaryTint;
+    background-color: #f8f8f8;
+    @include box-sizing(border-box);
+  }
+  form > .field {
+    margin: 12px 0;
+    border-width: 1px;
+    @include border-radius(4px);
+  }
+  .button, button {
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 14px;
+    font-size: 22px;
+    border: 0;
+    color: $secondary;
+    background-color: #5b5f66;
+    @include border-radius(4px);
+    @include user-select(none);
+    &:hover {
+      color: #404245;
+      background-color: #d8d8d8;
+    }
+    &[disabled] {
+      cursor: not-allowed;
+      color: #5b5f66;
+      background-color: #d8d8d8;
+    }
+  }
+  .field-row {
+    margin: 12px 0;
+    &.active .validation {
+      display: inline-block;
+    }
+  }
+  .field-wrapper {
+    width: 100%;
+    display: table;
+    > .field {
+      width: 100%;
+      display: table-cell;
+    }
+    > .field:first-child {
+      border-width: 1px 0 1px 1px;
+      @include border-radius(4px 0 0 4px);
+    }
+    > .field:last-child {
+      border-width: 1px 1px 1px 0;
+      @include border-radius(0 4px 4px 0);
+    }
+    > span {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 8px;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: #d8d8d8;
+    }
+  }
+  .validation {
+    display: none;
+    margin: 0 4px;
+    padding: 0;
+    width: calc(100% - 8px);
+    list-style: none;
+    text-align: left;
+    background-color: #d8d8d8;
+    @include border-radius(0 0 4px 4px);
+    &.active {
+      display: inline-block;
+    }
+    li {
+      padding: 8px;
+      margin-top: 4px;
+      &:before {
+        content: '✕';
+        margin: -4px 8px -4px -4px;
+        padding: 4px 6px;
+        font-weight: bold;
+        color: $secondary;
+        background-color: #5b5f66;
+        @include border-radius(4px);
+      }
+      &.valid:before {
+        content: '✓';
+      }
+    }
+  }
+}

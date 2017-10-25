@@ -1,0 +1,44 @@
+:host .logo {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
+}
+:host .logo:after {
+  content: '|';
+  font-size: 20px;
+  font-weight: normal;
+  padding: 0 8px 0 20px;
+}
+
+:host ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+:host li {
+  margin: 0;
+}
+:host a {
+  color: #5b5f66;
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px;
+  font-size: 20px;
+  line-height: 160%;
+}
+:host a:hover {
+  background-color: #d8d8d8;
+}
+
+:host > ul > li {
+  display: inline-block;
+}
+
+:host > ul > li > ul {
+  display: none;
+}
+
+:host > ul.right {
+  float:right;
+}

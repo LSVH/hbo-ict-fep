@@ -1,0 +1,19 @@
+<span class="logo">LoanSys</span>
+<ul class="general">
+  <li><a routerLink="products">Products</a></li>
+  <li *ngIf="isAuthenticated()"><a routerLink="stock-items">Stock items</a></li>
+  <li *ngIf="isAuthenticated()"><a routerLink="users">Users</a></li>
+</ul>
+<ul class="authenticated right" *ngIf="isAuthenticated()">
+  <li><a routerLink="account">My Account</a>
+    <ul>
+      <li><a routerLink="account/edit">Settings</a></li>
+      <li><a routerLink="reservations">Reservations</a></li>
+      <li><a href="#" (click)="logout()">Log out</a></li>
+    </ul>
+  </li>
+</ul>
+<ul class="anonymous right" *ngIf="!isAuthenticated()">
+  <li><a routerLink="login">Login</a></li>
+  <li><a routerLink="register">Register</a></li>
+</ul>
